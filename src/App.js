@@ -6,9 +6,13 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import NotFoundPage from './components/NotFoundPage';
 import ProtectedRoute from './components/ProtectedRoute';
+
+
+
 function App() {
 	const isLoggedin = true;
 	return (
+
 		<>
 			<BrowserRouter>
 				<Routes>
@@ -35,6 +39,7 @@ function App() {
 				</Routes>
 			</BrowserRouter>
 		</>
+
 	);
 }
 
