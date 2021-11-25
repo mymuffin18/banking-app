@@ -1,13 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import LoginForm from './components/LoginForm';
-
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import NotFoundPage from './components/NotFoundPage';
+import ProtectedRoute from './components/ProtectedRoute';
 function App() {
+	const isLoggedin = true;
 	return (
-		<div class='p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4 mt-5 bg-green-400'>
-			<LoginForm />
-		</div>
+		<>
+			<BrowserRouter>
+				<Routes>
+					<Route
+						path='/'
+						element={
+							isLoggedin ? (
+								<Navigate replace to='dashboard' />
+							) : (
+								<LoginForm />
+							)
+						}
+					/>
+					<Route
+						path='dashboard'
+						element={
+							<ProtectedRoute isAuth={isLoggedin}>
+								<Dashboard />
+							</ProtectedRoute>
+						}
+					/>
+
+					<Route path='*' element={<NotFoundPage />} />
+				</Routes>
+			</BrowserRouter>
+		</>
 	);
 }
 
