@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CreateAccount from './CreateAccount';
 import {useNavigate} from 'react-router-dom'
+import DepositModal from './DepositModal'
+import WithdrawModal from './WithdrawModal'
+import TransferModal from './TransferModal';
 
 
 
 function Dashboard() {
 	const navigate = useNavigate();
+	const [openDepositModal, setOpenDepositModal] = useState(false)
+	const [openWithdrawModal, setOpenWithdrawModal] = useState(false)
+	const [openTransferModal, setOpenTransferModal] = useState(false)
+
 	return (
 	<>
 	<div>Dashboard</div>
@@ -44,9 +51,14 @@ function Dashboard() {
 		</tr>		
 	</table>
 
-	<button>Deposit</button>
-	<button>Widthraw</button>
-	<button>Transfer</button>
+	<button onClick={()=>{setOpenDepositModal(true)}}>Deposit</button>
+	{openDepositModal && <DepositModal closeDepositModal={setOpenDepositModal}/>}
+
+	<button onClick={()=> {setOpenWithdrawModal(true)}}>Widthraw</button>
+	{openWithdrawModal && <WithdrawModal closeWithdrawModal={setOpenWithdrawModal}/>}
+
+	<button onClick={()=>{setOpenTransferModal(true)}}>Transfer</button>
+	{openTransferModal && <TransferModal closeTransferModal={setOpenTransferModal}/>}
 	</>
 	)
 }
