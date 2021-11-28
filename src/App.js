@@ -9,7 +9,10 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { useAuth } from './components/context/AuthContextProvider';
 
 function App() {
+
 	const { state } = useAuth();
+
+	const isLoggedin = true;
 
 	return (
 		<>
