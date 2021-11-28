@@ -1,9 +1,11 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-
-function ProtectedRoute({ isAuth, ...props }) {
-	if (!isAuth) {
-		return <Navigate to='/login' />;
+import { useAuth } from './context/AuthContextProvider';
+function ProtectedRoute(props) {
+	const { state } = useAuth();
+	console.log(state);
+	if (!state) {
+		return <Navigate to='/' />;
 	}
 	return props.children;
 }

@@ -1,33 +1,54 @@
-import React, {useState} from 'react';
-
-function LoginForm() {
-
-	const [account, setAccount] = useState({userName: '', password: ''})
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from './context/AuthContextProvider';
+function LoginForm({ handleClick }) {
+	const [account, setAccount] = useState({ userName: '', password: '' });
 	const validation = {
-		userName: 'admin', password: 'password'
-	}
+		userName: 'admin',
+		password: 'password',
+	};
 
-	const handleLogin =() => {
+	const { dispatch } = useAuth();
 
-		if ((account.userName === validation.userName) && (account.password === validation.password)) {
-			console.log('successful')
-		}else{
-			console.log('not matched')
+	const navigate = useNavigate();
+	const handleLogin = (e) => {
+		e.preventDefault();
+
+		if (
+			account.userName === validation.userName &&
+			account.password === validation.password
+		) {
+			dispatch('LOGIN');
+			navigate('/dashboard', { replace: true });
+		} else {
+			console.log('not matched');
 		}
-		// console.log(`username: ${account.userName}, password: ${account.password}`)
-		// alert(`username: ${account.userName}, password: ${account.password}`)
-	}
+	};
 
 	return (
-	<form>
-	<h1>Login form</h1>
+		<form>
+			<h1>Login form</h1>
 
-	<input type="text" value={account.userName} onChange={e => setAccount({...account, userName:e.target.value})} placeholder="username"/>
-	<input type="text" value={account.password} onChange={e => setAccount({...account, password:e.target.value})} placeholder="password"/>
+			<input
+				type='text'
+				value={account.userName}
+				onChange={(e) =>
+					setAccount({ ...account, userName: e.target.value })
+				}
+				placeholder='username'
+			/>
+			<input
+				type='text'
+				value={account.password}
+				onChange={(e) =>
+					setAccount({ ...account, password: e.target.value })
+				}
+				placeholder='password'
+			/>
 
-	<button onClick={()=> handleLogin()}>Login</button>
-	</form>
-	)
+			<button onClick={(e) => handleLogin(e)}>Login</button>
+		</form>
+	);
 }
 
 export default LoginForm;

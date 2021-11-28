@@ -6,20 +6,19 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import NotFoundPage from './components/NotFoundPage';
 import ProtectedRoute from './components/ProtectedRoute';
-
-
+import { useAuth } from './components/context/AuthContextProvider';
 
 function App() {
-	const isLoggedin = false;
-	return (
+	const { state } = useAuth();
 
+	return (
 		<>
 			<BrowserRouter>
 				<Routes>
 					<Route
 						path='/'
 						element={
-							isLoggedin ? (
+							state ? (
 								<Navigate replace to='dashboard' />
 							) : (
 								<LoginForm />
@@ -29,7 +28,7 @@ function App() {
 					<Route
 						path='dashboard'
 						element={
-							<ProtectedRoute isAuth={isLoggedin}>
+							<ProtectedRoute>
 								<Dashboard />
 							</ProtectedRoute>
 						}
@@ -39,7 +38,6 @@ function App() {
 				</Routes>
 			</BrowserRouter>
 		</>
-
 	);
 }
 
