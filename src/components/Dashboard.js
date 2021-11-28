@@ -1,6 +1,11 @@
 import React from 'react';
+import CreateAccount from './CreateAccount';
+import {useNavigate} from 'react-router-dom'
+
+
 
 function Dashboard() {
+	const navigate = useNavigate();
 	return (
 	<>
 	<div>Dashboard</div>
@@ -24,7 +29,7 @@ function Dashboard() {
 		</tr>
 	</table>
 
-	<button>Create Account</button>
+	<button onClick={()=>{navigate('/create')}}>Create Account</button>
 	<br />
 	<br />
 	

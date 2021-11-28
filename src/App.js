@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import NotFoundPage from './components/NotFoundPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useAuth } from './components/context/AuthContextProvider';
+import CreateAccount from './components/CreateAccount';
 
 function App() {
 
@@ -33,6 +34,14 @@ function App() {
 						element={
 							<ProtectedRoute>
 								<Dashboard />
+							</ProtectedRoute>
+						}
+					/>
+					<Route
+						path='create'
+						element={
+							<ProtectedRoute>
+								<CreateAccount />
 							</ProtectedRoute>
 						}
 					/>
