@@ -2,3 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+    background-image: url('https://blog.equinix.com/wp-content/uploads/2020/12/12-10-20_banking-banner-scaled.jpeg');
+    background-size: cover;
+}
+
+.card {
+    backdrop-filter: blur(10px);
+}

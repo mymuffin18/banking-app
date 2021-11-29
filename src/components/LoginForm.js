@@ -19,7 +19,7 @@ function LoginForm() {
 	}
 
 	return (
-	<form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+	<form className="w-1/5 p-5 rounded-xl bg-gradient bg-gradient-to-br from-gray-300 to-transparent  bg-opacity-20 shadow-md card">
 	{/* <h1 className="text-center">Login form</h1> */}
 	<div class="mb-4">
 	<input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" value={account.userName} onChange={e => setAccount({...account, userName:e.target.value})} placeholder="username"/>
