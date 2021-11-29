@@ -19,13 +19,20 @@ function LoginForm() {
 	}
 
 	return (
-	<form>
-	<h1>Login form</h1>
-
-	<input type="text" value={account.userName} onChange={e => setAccount({...account, userName:e.target.value})} placeholder="username"/>
-	<input type="text" value={account.password} onChange={e => setAccount({...account, password:e.target.value})} placeholder="password"/>
-
-	<button onClick={()=> handleLogin()}>Login</button>
+	<form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+	{/* <h1 className="text-center">Login form</h1> */}
+	<div class="mb-4">
+	<input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" value={account.userName} onChange={e => setAccount({...account, userName:e.target.value})} placeholder="username"/>
+	</div>
+	<div class="mb-6">
+	<input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" value={account.password} onChange={e => setAccount({...account, password:e.target.value})} placeholder="password"/>
+	</div>
+	<div className="flex items-center justify-between">
+		<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={()=> handleLogin()}>Login</button>
+		<a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+        Forgot Password?
+      </a>
+	</div>
 	</form>
 	)
 }
