@@ -21,11 +21,11 @@ export function AuthContextProvider(props) {
 	const [state, dispatch] = useReducer(authReducer, initialState, () => {
 		const data = localStorage.getItem('login');
 
-		return data ? data : false;
+		return data ? JSON.parse(data) : false;
 	});
 
 	useEffect(() => {
-		localStorage.setItem('login', state);
+		localStorage.setItem('login', JSON.stringify(state));
 	}, [state]);
 
 	return (

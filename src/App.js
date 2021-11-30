@@ -7,36 +7,48 @@ import Dashboard from './components/Dashboard';
 import NotFoundPage from './components/NotFoundPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useAuth } from './components/context/AuthContextProvider';
+import CreateAccout from './components/CreateAccout';
+import UserContextProvider from './components/context/UserContextProvider';
 
 function App() {
 	const { state } = useAuth();
 
 	return (
 		<>
-			<BrowserRouter>
-				<Routes>
-					<Route
-						path='/'
-						element={
-							state ? (
-								<Navigate replace to='dashboard' />
-							) : (
-								<LoginForm />
-							)
-						}
-					/>
-					<Route
-						path='dashboard'
-						element={
-							<ProtectedRoute>
-								<Dashboard />
-							</ProtectedRoute>
-						}
-					/>
+			<UserContextProvider>
+				<BrowserRouter>
+					<Routes>
+						<Route
+							path='/'
+							element={
+								state ? (
+									<Navigate replace to='dashboard' />
+								) : (
+									<LoginForm />
+								)
+							}
+						/>
+						<Route
+							path='dashboard'
+							element={
+								<ProtectedRoute>
+									<Dashboard />
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							path='create'
+							element={
+								<ProtectedRoute>
+									<CreateAccout />
+								</ProtectedRoute>
+							}
+						/>
 
-					<Route path='*' element={<NotFoundPage />} />
-				</Routes>
-			</BrowserRouter>
+						<Route path='*' element={<NotFoundPage />} />
+					</Routes>
+				</BrowserRouter>
+			</UserContextProvider>
 		</>
 	);
 }
