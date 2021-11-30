@@ -6,7 +6,7 @@ function WidthrawalModal( {closeWithdrawModal}) {
         <div className="modalBackGround">
             <div className="modalContainer glass card">
                 <div className="title">
-                    <h1>Widthraw</h1>
+                    <h1>Withdraw</h1>
                 </div>
                 <div className="body">
                     <input type="number" min="0" placeholder="Withdraw Amount"/>
