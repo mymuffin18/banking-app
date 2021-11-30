@@ -38,7 +38,7 @@ function LoginForm({ handleClick }) {
 				placeholder='username'
 			/>
 			<input
-				type='text'
+				type='password'
 				value={account.password}
 				onChange={(e) =>
 					setAccount({ ...account, password: e.target.value })
