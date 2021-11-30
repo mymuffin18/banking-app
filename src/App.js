@@ -7,7 +7,7 @@ import Dashboard from './components/Dashboard';
 import NotFoundPage from './components/NotFoundPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useAuth } from './components/context/AuthContextProvider';
-import CreateAccout from './components/CreateAccout';
+import CreateAccount from './components/CreateAccount';
 import UserContextProvider from './components/context/UserContextProvider';
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
 							path='create'
 							element={
 								<ProtectedRoute>
-									<CreateAccout />
+									<CreateAccount />
 								</ProtectedRoute>
 							}
 						/>
