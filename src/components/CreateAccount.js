@@ -12,7 +12,15 @@ function CreateAccount() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		dispatch({ type: 'ADD_USER', user: user });
+		const balance = parseInt(user.balance);
+		dispatch({
+			type: 'ADD_USER',
+			user: {
+				firstName: user.firstName,
+				lastName: user.lastName,
+				balance: balance,
+			},
+		});
 
 		setUser({
 			firstName: '',

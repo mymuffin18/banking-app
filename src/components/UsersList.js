@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { UserContext } from './context/UserContextProvider';
 import User from './User';
 
-function UserList() {
+function UserList({ clickHandler }) {
 	const { users } = useContext(UserContext);
 
 	return (
@@ -18,6 +18,7 @@ function UserList() {
 				return (
 					<User
 						key={user.id}
+						onClick={clickHandler}
 						id={user.id}
 						firstname={user.firstName}
 						lastname={user.lastName}

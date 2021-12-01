@@ -19,9 +19,18 @@ const userReducer = (state, action) => {
 			return [
 				...state,
 				state.map((user) => {
-					const newAmount = user.balance + action.deposit;
 					return user.id === action.id
-						? { ...state, balance: newAmount }
+						? (user.balance += action.deposit)
+						: user;
+				}),
+			];
+
+		case 'WITHDRAW':
+			return [
+				...state,
+				state.map((user) => {
+					return user.id === action.id
+						? (user.balance -= action.amount)
 						: user;
 				}),
 			];
