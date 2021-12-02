@@ -17,12 +17,12 @@ function Dashboard() {
   return (
     <div className="h-screen">
       <h1>Dashboard</h1>
-      <div className="grid grid-cols-4 gap-4">
-        <div className="row-span-2 bg-blue-500 card h-60">
+      <div className="grid grid-cols-5 gap-4">
+        <div className="row-span-2 col-span-2 bg-blue-500 card h-60 rounded-3xl">
           Container of Info
         </div>
         <button
-          className="bg-blue-500"
+          className="bg-blue-500 rounded-3xl"
           onClick={() => {
             setOpenDepositModal(true);
           }}
@@ -34,19 +34,19 @@ function Dashboard() {
         )}
 
         <button
-          className="bg-blue-500"
+          className="bg-blue-500 rounded-3xl"
           onClick={() => {
             setOpenWithdrawModal(true);
           }}
         >
-          Widthraw
+          Withdraw
         </button>
         {openWithdrawModal && (
           <WithdrawModal closeWithdrawModal={setOpenWithdrawModal} />
         )}
 
         <button
-          className="bg-blue-500"
+          className="bg-blue-500 rounded-3xl"
           onClick={() => {
             setOpenTransferModal(true);
           }}
@@ -58,7 +58,7 @@ function Dashboard() {
         )}
 
         <button
-          className="bg-blue-500"
+          className="bg-blue-500 rounded-3xl"
           onClick={() => {
             navigate("/create");
           }}
@@ -66,7 +66,7 @@ function Dashboard() {
           Create Account
         </button>
 
-        <button className="bg-blue-500">Log-out</button>
+        <button className="bg-blue-500 rounded-3xl">Log-out</button>
       </div>
 
       <UserList />

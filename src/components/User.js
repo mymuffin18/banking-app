@@ -1,14 +1,22 @@
-import React from 'react';
+import React from "react";
 
 function User(props) {
-	return (
-		<div className='flex justify-around bg-blue-200'>
-			<h4 className='font-semibold'>{props.id}</h4>
-			<h4 className='font-semibold'>{props.firstname}</h4>
-			<h4 className='font-semibold'>{props.lastname}</h4>
-			<h4 className='font-semibold'>{props.balance}</h4>
-		</div>
-	);
+  return (
+    <div className="flex flex-row justify-center">
+      <div className="font-semibold border-2 border-solid border-black w-1/3">
+        {props.id}
+      </div>
+      <div className="font-semibold border-2 border-solid border-black w-1/6">
+        {props.firstname}
+      </div>
+      <div className="font-semibold border-2 border-solid border-black w-1/6">
+        {props.lastname}
+      </div>
+      <div className="font-semibold border-2 border-solid border-black w-1/6">
+        {props.balance}
+      </div>
+    </div>
+  );
 }
 
 export default User;
