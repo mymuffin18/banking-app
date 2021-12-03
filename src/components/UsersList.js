@@ -1,9 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "./context/UserContextProvider";
 import User from "./User";
 
 function UserList() {
   const { users } = useContext(UserContext);
+  const [selected, setSelected] = useState(false);
+
+  const handleClickOnDiv = (id) => {
+    setSelected(id !== selected ? id : "");
+    console.log(id);
+  };
 
   return (
     <div className="flex justify-center">
@@ -29,6 +35,8 @@ function UserList() {
             <User
               className="text-left"
               key={user.id}
+              onClick={handleClickOnDiv}
+              selected={selected}
               id={user.id}
               firstname={user.firstName}
               lastname={user.lastName}
