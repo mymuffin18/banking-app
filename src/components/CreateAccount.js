@@ -12,7 +12,15 @@ function CreateAccount() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: "ADD_USER", user: user });
+    const balance = parseInt(user.balance);
+    dispatch({
+      type: "ADD_USER",
+      user: {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        balance: balance,
+      },
+    });
 
     setUser({
       firstName: "",
@@ -28,30 +36,29 @@ function CreateAccount() {
         <h1> Create account</h1>
       </div>
 
-      <div className="mb-6 flex justify-center">
-        <form className="border-2" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="first name"
-            value={user.firstName}
-            onChange={(e) => setUser({ ...user, firstName: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="last name"
-            value={user.lastName}
-            onChange={(e) => setUser({ ...user, lastName: e.target.value })}
-          />
-          <input
-            type="text"
-            value={user.balance}
-            onChange={(e) => setUser({ ...user, balance: e.target.value })}
-          />
-          <button className="btn-blue" type="submit">
-            Create Account
-          </button>
-        </form>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="firstName">firstname</label>
+        <input
+          type="text"
+          value={user.firstName}
+          onChange={(e) => setUser({ ...user, firstName: e.target.value })}
+        />
+        <label htmlFor="lastName">lastname</label>
+        <input
+          type="text"
+          value={user.lastName}
+          onChange={(e) => setUser({ ...user, lastName: e.target.value })}
+        />
+        <label htmlFor="balance">balance</label>
+        <input
+          type="text"
+          value={user.balance}
+          onChange={(e) => setUser({ ...user, balance: e.target.value })}
+        />
+        <button className="button" type="submit">
+          Create Account
+        </button>
+      </form>
 
       <p>{user.firstName}</p>
       <p>{user.lastName}</p>

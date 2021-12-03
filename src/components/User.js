@@ -1,13 +1,16 @@
 import React from "react";
 
 function User(props) {
-  console.log("selected", props.selected);
+  const fun = () => {
+    props.onClick(props.id);
+    props.onSelect(props.id);
+  };
   return (
     <div
       className={`${
-        props.selected === props.id ? "bg-red-500" : ""
+        props.selected === props.id ? "bg-blue-500" : ""
       } flex flex-row justify-center`}
-      onClick={(e) => props.onClick(props.id)}
+      onClick={fun}
     >
       <div className="font-semibold border-2 border-solid border-black w-1/3">
         {props.id}
