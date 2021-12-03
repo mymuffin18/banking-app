@@ -20,7 +20,7 @@ function TransferModal({ closeTransferModal, id }) {
 				amount: parseInt(amount),
 			});
 
-			closeTransferModal(true);
+			closeTransferModal(false);
 		}
 		setAmount(0);
 		setReceiverId('');

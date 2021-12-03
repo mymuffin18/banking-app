@@ -37,6 +37,8 @@ function Dashboard() {
 				onClick={() => {
 					setOpenDepositModal(true);
 				}}
+				disabled={id === undefined ? true : false}
+				className='btn-blue'
 			>
 				Deposit
 			</button>
@@ -51,6 +53,8 @@ function Dashboard() {
 				onClick={() => {
 					setOpenWithdrawModal(true);
 				}}
+				disabled={id === undefined ? true : false}
+				className='btn-blue'
 			>
 				Widthraw
 			</button>
@@ -65,6 +69,8 @@ function Dashboard() {
 				onClick={() => {
 					setOpenTransferModal(true);
 				}}
+				disabled={id === undefined ? true : false}
+				className='btn-blue'
 			>
 				Transfer
 			</button>
