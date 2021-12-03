@@ -5,7 +5,7 @@ function User(props) {
   return (
     <div
       className={`${
-        props.selected === props.id ? "border-red-500" : ""
+        props.selected === props.id ? "bg-red-500" : ""
       } flex flex-row justify-center`}
       onClick={(e) => props.onClick(props.id)}
     >

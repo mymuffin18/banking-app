@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "./context/UserContextProvider";
 import { useNavigate } from "react-router-dom";
-function CreateAccout() {
+function CreateAccount() {
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
