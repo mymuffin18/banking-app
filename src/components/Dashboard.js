@@ -38,18 +38,10 @@ function Dashboard() {
 				</div>
 				<button
 					className='bg-blue-500 rounded-3xl'
-					onClick={() => {
-						setOpenDepositModal(true);
-					}}
+					onClick={() => navigate('/create')}
 				>
-					Deposit
+					Create Account
 				</button>
-				{openDepositModal && (
-					<DepositModal
-						closeDepositModal={setOpenDepositModal}
-					/>
-				)}
-
 				<button
 					className='bg-blue-500 rounded-3xl'
 					onClick={() => {
