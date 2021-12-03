@@ -4,16 +4,19 @@ import ReactDOM from 'react-dom';
 import { UserContext } from './context/UserContextProvider';
 
 function WidthrawalModal({ closeWithdrawModal, id }) {
-	const { dispatch } = useContext(UserContext);
+	const { dispatch, users } = useContext(UserContext);
 
 	const [amount, setAmount] = useState(0);
-
+	const user = users.find((user) => user.id === id);
 	const clickHandler = (e) => {
 		e.preventDefault();
-
-		dispatch({ type: 'WITHDRAW', id: id, amount: amount });
-
-		closeWithdrawModal(false);
+		if (user.balance < amount) {
+			alert('Not enough balance');
+		} else {
+			dispatch({ type: 'WITHDRAW', id: id, amount: amount });
+			setAmount(0);
+			closeWithdrawModal(false);
+		}
 	};
 	return ReactDOM.createPortal(
 		<div className='modalBackGround'>

@@ -35,6 +35,20 @@ const userReducer = (state, action) => {
 				}),
 			];
 
+		case 'TRANSFER':
+			return [
+				...state,
+				state.map((user) => {
+					if (user.id === action.senderId) {
+						return (user.balance -= action.amount);
+					}
+					if (user.id === action.receiverId) {
+						return (user.balance += action.amount);
+					}
+					return user;
+				}),
+			];
+
 		default:
 			return [];
 	}

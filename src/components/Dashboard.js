@@ -69,7 +69,10 @@ function Dashboard() {
 				Transfer
 			</button>
 			{openTransferModal && (
-				<TransferModal closeTransferModal={setOpenTransferModal} />
+				<TransferModal
+					closeTransferModal={setOpenTransferModal}
+					id={id}
+				/>
 			)}
 
 			<button

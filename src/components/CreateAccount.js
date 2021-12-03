@@ -37,6 +37,7 @@ function CreateAccount() {
 			</div>
 
 			<form onSubmit={handleSubmit}>
+				<label htmlFor='firstName'>firstname</label>
 				<input
 					type='text'
 					value={user.firstName}
@@ -44,6 +45,7 @@ function CreateAccount() {
 						setUser({ ...user, firstName: e.target.value })
 					}
 				/>
+				<label htmlFor='lastName'>lastname</label>
 				<input
 					type='text'
 					value={user.lastName}
@@ -51,6 +53,7 @@ function CreateAccount() {
 						setUser({ ...user, lastName: e.target.value })
 					}
 				/>
+				<label htmlFor='balance'>balance</label>
 				<input
 					type='text'
 					value={user.balance}

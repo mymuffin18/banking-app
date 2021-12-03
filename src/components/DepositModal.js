@@ -15,7 +15,7 @@ function DepositModal({ closeDepositModal, id }) {
 			id: id,
 			deposit: parseInt(depositAmount),
 		});
-
+		setDepositAmount(0);
 		closeDepositModal(false);
 	};
 	return ReactDOM.createPortal(
