@@ -16,39 +16,50 @@ const userReducer = (state, action) => {
 			];
 
 		case 'DEPOSIT':
-			return [
-				...state,
-				state.map((user) => {
-					return user.id === action.id
-						? (user.balance += action.deposit)
-						: user;
-				}),
-			];
+			return state.map((user) => {
+				return user.id === action.id
+					? {
+							id: user.id,
+							firstName: user.firstName,
+							lastName: user.lastName,
+							balance: (user.balance += action.deposit),
+					  }
+					: user;
+			});
 
 		case 'WITHDRAW':
-			return [
-				...state,
-				state.map((user) => {
-					return user.id === action.id
-						? (user.balance -= action.amount)
-						: user;
-				}),
-			];
+			// working
+			return state.map((user) => {
+				return user.id === action.id
+					? {
+							id: user.id,
+							firstName: user.firstName,
+							lastName: user.lastName,
+							balance: (user.balance -= action.amount),
+					  }
+					: user;
+			});
 
 		case 'TRANSFER':
-			return [
-				...state,
-				state.map((user) => {
-					if (user.id === action.senderId) {
-						return (user.balance -= action.amount);
-					}
-					if (user.id === action.receiverId) {
-						return (user.balance += action.amount);
-					}
-					return user;
-				}),
-			];
-
+			return state.map((user) => {
+				if (user.id === action.senderId) {
+					return {
+						id: user.id,
+						firstName: user.firstName,
+						lastName: user.lastName,
+						balance: (user.balance -= action.amount),
+					};
+				}
+				if (user.id === action.receiverId) {
+					return {
+						id: user.id,
+						firstName: user.firstName,
+						lastName: user.lastName,
+						balance: (user.balance += action.amount),
+					};
+				}
+				return user;
+			});
 		default:
 			return [];
 	}
