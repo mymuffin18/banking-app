@@ -55,7 +55,7 @@ function CreateAccount() {
           value={user.balance}
           onChange={(e) => setUser({ ...user, balance: e.target.value })}
         />
-        <button className="button" type="submit">
+        <button className="btn-blue" type="submit">
           Create Account
         </button>
       </form>
