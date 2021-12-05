@@ -70,6 +70,7 @@ function Dashboard() {
           <WithdrawModal closeWithdrawModal={setOpenWithdrawModal} id={id} />
         )}
 
+<<<<<<< HEAD
         <button
           onClick={() => {
             setOpenTransferModal(true);
@@ -87,6 +88,30 @@ function Dashboard() {
           <h2>Logout</h2>
         </button>
       </div>
+=======
+				<button
+					onClick={() => {
+						setOpenTransferModal(true);
+					}}
+					disabled={id === undefined ? true : false}
+					className='bg-blue-500 rounded-3xl'
+				>
+					Transfer
+				</button>
+				{openTransferModal && (
+					<TransferModal
+						closeTransferModal={setOpenTransferModal}
+						id={id}
+					/>
+				)}
+				<button
+					className='bg-blue-500 rounded-3xl'
+					onClick={handleLogout}
+				>
+					Logout
+				</button>
+			</div>
+>>>>>>> contextapi_josh
 
       <UserList clickHandler={clickHandler} />
     </div>
