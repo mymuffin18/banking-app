@@ -3,7 +3,7 @@ import React, { useReducer, createContext, useContext, useEffect } from 'react';
 const initialState = {};
 
 const authReducer = (state, action) => {
-	switch (action) {
+	switch (action.type) {
 		case 'LOGIN_ADMIN': {
 			return {
 				id: 1,

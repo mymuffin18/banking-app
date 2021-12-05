@@ -29,10 +29,10 @@ function LoginForm({ handleClick }) {
 			account.userName === validation.userName &&
 			account.password === validation.password
 		) {
-			dispatch('LOGIN_ADMIN');
+			dispatch({ type: 'LOGIN_ADMIN' });
 			navigate('/dashboard');
 		} else if (user) {
-			dispatch('LOGIN_USER');
+			dispatch({ type: 'LOGIN_USER', id: user.id });
 			navigate('/user');
 		} else {
 			alert('User not found');
