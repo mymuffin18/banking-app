@@ -12,6 +12,8 @@ const userReducer = (state, action) => {
 					firstName: action.user.firstName,
 					lastName: action.user.lastName,
 					balance: action.user.balance,
+					username: action.user.username,
+					password: action.user.password,
 				},
 			];
 
@@ -23,6 +25,8 @@ const userReducer = (state, action) => {
 							firstName: user.firstName,
 							lastName: user.lastName,
 							balance: (user.balance += action.deposit),
+							username: user.username,
+							password: user.password,
 					  }
 					: user;
 			});
@@ -36,6 +40,8 @@ const userReducer = (state, action) => {
 							firstName: user.firstName,
 							lastName: user.lastName,
 							balance: (user.balance -= action.amount),
+							username: user.username,
+							password: user.password,
 					  }
 					: user;
 			});
@@ -48,6 +54,8 @@ const userReducer = (state, action) => {
 						firstName: user.firstName,
 						lastName: user.lastName,
 						balance: (user.balance -= action.amount),
+						username: user.username,
+						password: user.password,
 					};
 				}
 				if (user.id === action.receiverId) {
@@ -56,6 +64,8 @@ const userReducer = (state, action) => {
 						firstName: user.firstName,
 						lastName: user.lastName,
 						balance: (user.balance += action.amount),
+						username: user.username,
+						password: user.password,
 					};
 				}
 				return user;

@@ -9,25 +9,27 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { useAuth } from './components/context/AuthContextProvider';
 import CreateAccount from './components/CreateAccount';
 import UserContextProvider from './components/context/UserContextProvider';
+import UserProtetctedRoute from './components/budget/UserProtetctedRoute';
+import UserDashboard from './components/budget/UserDashboard';
 
 function App() {
 	const { state } = useAuth();
+
+	let redirectRoute;
+	if (state.auth === 'admin') {
+		redirectRoute = <Navigate replace to='dashboard' />;
+	} else if (state.auth === 'user') {
+		redirectRoute = <Navigate replace to='user' />;
+	} else {
+		redirectRoute = <LoginForm />;
+	}
 
 	return (
 		<>
 			<UserContextProvider>
 				<BrowserRouter>
 					<Routes>
-						<Route
-							path='/'
-							element={
-								state ? (
-									<Navigate replace to='dashboard' />
-								) : (
-									<LoginForm />
-								)
-							}
-						/>
+						<Route path='/' element={redirectRoute} />
 						<Route
 							path='dashboard'
 							element={
@@ -42,6 +44,14 @@ function App() {
 								<ProtectedRoute>
 									<CreateAccount />
 								</ProtectedRoute>
+							}
+						/>
+						<Route
+							path='user'
+							element={
+								<UserProtetctedRoute>
+									<UserDashboard />
+								</UserProtetctedRoute>
 							}
 						/>
 

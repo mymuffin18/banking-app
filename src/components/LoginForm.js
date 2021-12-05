@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContextProvider';
+import { UserContext } from './context/UserContextProvider';
 function LoginForm({ handleClick }) {
 	const [account, setAccount] = useState({ userName: '', password: '' });
 	const validation = {
@@ -9,19 +10,32 @@ function LoginForm({ handleClick }) {
 	};
 
 	const { dispatch } = useAuth();
-
+	const { users } = useContext(UserContext);
 	const navigate = useNavigate();
 	const handleLogin = (e) => {
 		e.preventDefault();
+
+		const user = users.find((user) => {
+			if (
+				user.username === account.userName &&
+				user.password === account.password
+			) {
+				return user;
+			}
+			return null;
+		});
 
 		if (
 			account.userName === validation.userName &&
 			account.password === validation.password
 		) {
-			dispatch('LOGIN');
-			navigate('/dashboard', { replace: true });
+			dispatch('LOGIN_ADMIN');
+			navigate('/dashboard');
+		} else if (user) {
+			dispatch('LOGIN_USER');
+			navigate('/user');
 		} else {
-			console.log('not matched');
+			alert('User not found');
 		}
 	};
 

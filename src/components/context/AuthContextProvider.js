@@ -1,16 +1,23 @@
 import React, { useReducer, createContext, useContext, useEffect } from 'react';
 
-const initialState = {
-	isAuth: false,
-};
+const initialState = {};
 
 const authReducer = (state, action) => {
 	switch (action) {
-		case 'LOGIN': {
-			return true;
+		case 'LOGIN_ADMIN': {
+			return {
+				id: 1,
+				auth: 'admin',
+			};
+		}
+		case 'LOGIN_USER': {
+			return {
+				id: action.id,
+				auth: 'user',
+			};
 		}
 		case 'LOGOUT':
-			return false;
+			return '';
 		default:
 			return initialState;
 	}

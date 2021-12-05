@@ -4,7 +4,7 @@ import { useAuth } from './context/AuthContextProvider';
 function ProtectedRoute(props) {
 	const { state } = useAuth();
 	console.log(state);
-	if (!state) {
+	if (state.auth !== 'admin') {
 		return <Navigate to='/' />;
 	}
 	return props.children;
