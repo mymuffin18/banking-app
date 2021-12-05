@@ -32,33 +32,51 @@ function CreateAccount() {
   };
   return (
     <div className="mb-6">
-      <div>
+      {/* <div>
         <h1> Create account</h1>
-      </div>
+      </div> */}
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="firstName">firstname</label>
-        <input
-          type="text"
-          value={user.firstName}
-          onChange={(e) => setUser({ ...user, firstName: e.target.value })}
-        />
-        <label htmlFor="lastName">lastname</label>
-        <input
-          type="text"
-          value={user.lastName}
-          onChange={(e) => setUser({ ...user, lastName: e.target.value })}
-        />
-        <label htmlFor="balance">balance</label>
-        <input
-          type="text"
-          value={user.balance}
-          onChange={(e) => setUser({ ...user, balance: e.target.value })}
-        />
-        <button className="btn-blue" type="submit">
-          Create Account
-        </button>
-      </form>
+      <div className="flex items-center justify-center h-screen">
+        <form
+          className="flex justify-center items-center flex-col w-1/6 h-96 p-5 glass card rounded-3xl"
+          onSubmit={handleSubmit}
+        >
+          <h1>Bank Name Create Account</h1>
+          <div className="mb-6">
+            <input
+              type="text"
+              value={user.firstName}
+              placeholder="firstname"
+              onChange={(e) => setUser({ ...user, firstName: e.target.value })}
+            />
+          </div>
+
+          <div className="mb-6">
+            <input
+              type="text"
+              value={user.lastName}
+              placeholder="lastname"
+              onChange={(e) => setUser({ ...user, lastName: e.target.value })}
+            />
+          </div>
+
+          <div className="mb-6">
+            <label className="text-sm text-left text-red-500">
+              *initial deposit
+            </label>
+            <br />
+            <input
+              type="text"
+              value={user.balance}
+              onChange={(e) => setUser({ ...user, balance: e.target.value })}
+            />
+          </div>
+
+          <button className="btn-blue" type="submit">
+            Create Account
+          </button>
+        </form>
+      </div>
 
       <p>{user.firstName}</p>
       <p>{user.lastName}</p>

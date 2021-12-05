@@ -24,7 +24,7 @@ function DepositModal({ closeDepositModal, id }) {
   };
   return ReactDOM.createPortal(
     <div className="modalBackGround">
-      <div className="modalContainer glass card">
+      <div className="modalContainer glass modalCard">
         <div className="title">
           <h1>Deposit</h1>
         </div>
@@ -43,10 +43,13 @@ function DepositModal({ closeDepositModal, id }) {
           )}
         </div>
         <div className="footer">
-          <button className="btn-blue" onClick={() => closeDepositModal(false)}>
+          <button
+            className="btn-gradient"
+            onClick={() => closeDepositModal(false)}
+          >
             Cancel
           </button>
-          <button className="btn-blue" onClick={depositHandler}>
+          <button className="btn-gradient" onClick={depositHandler}>
             Continue
           </button>
         </div>

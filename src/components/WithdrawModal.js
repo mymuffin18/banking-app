@@ -26,7 +26,7 @@ function WidthrawalModal({ closeWithdrawModal, id }) {
   };
   return ReactDOM.createPortal(
     <div className="modalBackGround">
-      <div className="modalContainer glass card">
+      <div className="modalContainer glass modalCard">
         <div className="title">
           <h1>Withdraw</h1>
         </div>
@@ -46,12 +46,12 @@ function WidthrawalModal({ closeWithdrawModal, id }) {
         </div>
         <div className="footer">
           <button
-            className="btn-blue"
+            className="btn-gradient"
             onClick={() => closeWithdrawModal(false)}
           >
             Cancel
           </button>
-          <button className="btn-blue" onClick={clickHandler}>
+          <button className="btn-gradient" onClick={clickHandler}>
             Continue
           </button>
         </div>

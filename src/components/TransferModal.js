@@ -35,7 +35,7 @@ function TransferModal({ closeTransferModal, id }) {
   };
   return ReactDOM.createPortal(
     <div className="modalBackGround">
-      <div className="modalContainer glass card">
+      <div className="modalContainer glass modalCard">
         <div className="title">
           <h1>Transfer</h1>
         </div>
@@ -67,12 +67,12 @@ function TransferModal({ closeTransferModal, id }) {
         </div>
         <div className="footer">
           <button
-            className="btn-blue"
+            className="btn-gradient"
             onClick={() => closeTransferModal(false)}
           >
             Cancel
           </button>
-          <button className="btn-blue" onClick={handleClick}>
+          <button className="btn-gradient" onClick={handleClick}>
             Continue
           </button>
         </div>

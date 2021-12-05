@@ -3,7 +3,40 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-image: url("https://image.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg");
+  background-size: cover;
+  /* background-image: linear-gradient(
+    to right top,
+    #f44cf4,
+    #dd45f1,
+    #c53eee,
+    #ab39ea,
+    #9035e6,
+    #8031e0,
+    #6f2ed9,
+    #5d2bd3,
+    #5727ca,
+    #5122c0,
+    #4c1eb7,
+    #4619ae
+  ); */
+  margin: 20px;
+  /* font-family:'Anton', sans-serif; */
+  overflow: hidden;
+}
+
 .card {
+  /* backdrop-filter: blur(5px); */
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.modalCard {
   backdrop-filter: blur(5px);
 }
 
@@ -46,16 +79,20 @@
 
 @layer base {
   h1 {
-    @apply text-3xl text-center mb-6;
+    @apply text-3xl text-center mb-6 font-extrabold text-purple-600;
   }
   h2 {
-    @apply text-xl;
+    @apply text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-purple-700;
   }
 }
 
 @layer components {
   .btn-blue {
     @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-5;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-blue-400 to-purple-600  hover:bg-purple-500 text-white font-bold py-2 px-4 rounded mx-5;
   }
 
   .glass {
@@ -65,4 +102,26 @@
   .input-style {
     @apply shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 leading-tight;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white;
 }
