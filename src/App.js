@@ -11,7 +11,7 @@ import CreateAccount from './components/CreateAccount';
 import UserContextProvider from './components/context/UserContextProvider';
 import UserProtetctedRoute from './components/budget/UserProtetctedRoute';
 import UserDashboard from './components/budget/UserDashboard';
-
+import ExpenseContextProvider from './components/context/ExpenseContextProvider';
 function App() {
 	const { state } = useAuth();
 
@@ -27,37 +27,39 @@ function App() {
 	return (
 		<>
 			<UserContextProvider>
-				<BrowserRouter>
-					<Routes>
-						<Route path='/' element={redirectRoute} />
-						<Route
-							path='dashboard'
-							element={
-								<ProtectedRoute>
-									<Dashboard />
-								</ProtectedRoute>
-							}
-						/>
-						<Route
-							path='create'
-							element={
-								<ProtectedRoute>
-									<CreateAccount />
-								</ProtectedRoute>
-							}
-						/>
-						<Route
-							path='user'
-							element={
-								<UserProtetctedRoute>
-									<UserDashboard />
-								</UserProtetctedRoute>
-							}
-						/>
+				<ExpenseContextProvider>
+					<BrowserRouter>
+						<Routes>
+							<Route path='/' element={redirectRoute} />
+							<Route
+								path='dashboard'
+								element={
+									<ProtectedRoute>
+										<Dashboard />
+									</ProtectedRoute>
+								}
+							/>
+							<Route
+								path='create'
+								element={
+									<ProtectedRoute>
+										<CreateAccount />
+									</ProtectedRoute>
+								}
+							/>
+							<Route
+								path='user'
+								element={
+									<UserProtetctedRoute>
+										<UserDashboard />
+									</UserProtetctedRoute>
+								}
+							/>
 
-						<Route path='*' element={<NotFoundPage />} />
-					</Routes>
-				</BrowserRouter>
+							<Route path='*' element={<NotFoundPage />} />
+						</Routes>
+					</BrowserRouter>
+				</ExpenseContextProvider>
 			</UserContextProvider>
 		</>
 	);
