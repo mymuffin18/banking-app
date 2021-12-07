@@ -7,6 +7,7 @@ import WithdrawModal from './WithdrawModal';
 import TransferModal from './TransferModal';
 import { useAuth } from './context/AuthContextProvider';
 import { UserContext } from './context/UserContextProvider';
+import InfoContainer from './InfoContainer';
 
 function Dashboard() {
 	const navigate = useNavigate();
@@ -36,7 +37,7 @@ function Dashboard() {
 			</div>
 			<div className='grid grid-cols-5 gap-4'>
 				<div className='row-span-2 col-span-2 h-60 rounded-3xl card'>
-					<h2>Container of Info</h2>
+					<InfoContainer id={id} />
 				</div>
 				<button
 					className='rounded-3xl card'
