@@ -77,6 +77,47 @@ body {
   justify-content: center;
 }
 
+.list-items {
+  display: flex;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  max-height: 50px;
+}
+
+.button-complete,
+.button-edit,
+.button-delete {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 28px;
+  border-radius: 50%;
+}
+
+.button-complete {
+  color: #ff6c6c;
+  margin-right: 10px;
+}
+
+.button-edit {
+  color: #e2d029;
+  margin-right: 10px;
+}
+
+.button-delete {
+  color: lightseagreen;
+}
+
+.complete {
+  text-decoration-style: solid;
+  text-decoration-line: line-through;
+  text-decoration-color: #ff6c6c;
+  opacity: 0.6;
+}
+
 @layer base {
   h1 {
     @apply text-3xl text-center mb-6 font-extrabold text-purple-600;
