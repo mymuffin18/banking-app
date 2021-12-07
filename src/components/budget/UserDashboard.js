@@ -2,9 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../context/AuthContextProvider';
+import InfoContainer from '../InfoContainer';
 
 function UserDashboard() {
-	const { dispatch } = useAuth();
+	const { state, dispatch } = useAuth();
 	const navigate = useNavigate();
 	const handleLogout = () => {
 		dispatch('LOGOUT');
@@ -17,7 +18,7 @@ function UserDashboard() {
 			</div>
 			<div className='grid grid-cols-5 gap-4'>
 				<div className='row-span-2 col-span-2 h-60 rounded-3xl card'>
-					<h2>Container of Info</h2>
+					<InfoContainer id={state.id} />
 				</div>
 				{/* <button
 					className='rounded-3xl card'
