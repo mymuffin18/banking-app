@@ -1,9 +1,11 @@
 import React, { useState, useContext } from 'react';
 import ReactDOM from 'react-dom';
+import { TransactionContext } from './context/TransactionContextProvider';
 import { UserContext } from './context/UserContextProvider';
 
 function TransferModal({ closeTransferModal, id }) {
 	const { dispatch, users } = useContext(UserContext);
+	const { dispatch: tdispatch } = useContext(TransactionContext);
 	const [amount, setAmount] = useState(0);
 	const [receiverId, setReceiverId] = useState('');
 	const user = users.find((user) => user.id === id);
@@ -27,7 +29,12 @@ function TransferModal({ closeTransferModal, id }) {
 				receiverId: receiverId,
 				amount: parseInt(amount),
 			});
-
+			tdispatch({
+				type: 'TRANSFER_TRANSACTION',
+				id: id,
+				user: receiverId,
+				amount: parseInt(amount),
+			});
 			closeTransferModal(false);
 		}
 		setAmount(0);
