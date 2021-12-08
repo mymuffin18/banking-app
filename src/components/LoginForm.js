@@ -42,9 +42,7 @@ function LoginForm({ handleClick }) {
   return (
     <div className="flex items-center justify-center h-screen">
       <form className="lg:w-1/5 lg:h-auto p-5 rounded-xl card xs:modalContainer md:modalContainer">
-        <h1 className="text-purple-600 xs:text-5xl md:text-7xl lg:text-7xl mb-20">
-          Cashy++
-        </h1>
+        <h1 className="text-purple-600 text-7xl mb-20">Cashy++</h1>
 
         <div className="mb-6">
           <input
