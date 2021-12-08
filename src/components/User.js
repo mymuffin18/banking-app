@@ -6,23 +6,17 @@ function User(props) {
     props.onSelect(props.id);
   };
   return (
-    <div
-      className={`${
-        props.selected === props.id ? "bg-blue-500" : ""
-      } flex flex-row justify-center`}
-      onClick={fun}
-    >
-      <div className="font-semibold border-2 border-solid border-black w-1/3">
-        {props.id}
-      </div>
-      <div className="font-semibold border-2 border-solid border-black w-1/6">
-        {props.firstname}
-      </div>
-      <div className="font-semibold border-2 border-solid border-black w-1/6">
-        {props.lastname}
-      </div>
-      <div className="font-semibold border-2 border-solid border-black w-1/6">
-        {props.balance}
+    <div className="flex justify-center items-center">
+      <div
+        className={`${
+          props.selected === props.id ? "bg-blue-500" : ""
+        } flex flex-row justify-center border w-5/6`}
+        onClick={fun}
+      >
+        <div className="font-semibold w-2/5">{props.id}</div>
+        <div className="font-semibold w-1/5">{props.firstname}</div>
+        <div className="font-semibold w-1/5">{props.lastname}</div>
+        <div className="font-semibold w-1/5">{props.balance}</div>
       </div>
     </div>
   );

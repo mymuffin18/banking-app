@@ -5,6 +5,7 @@ import { useAuth } from "../context/AuthContextProvider";
 import Expenses from "./Expenses";
 import ChangePasswordModal from "./ChangePasswordModal";
 import ExpensesModal from "./ExpensesModal";
+import DateExpenseList from "./DateExpensesList";
 
 function UserDashboard() {
   const { dispatch } = useAuth();
@@ -16,6 +17,11 @@ function UserDashboard() {
 
   const [openChangePasswordModal, setOpenChangePasswordModal] = useState(false);
   const [openExpensesModal, setOpenExpensesModal] = useState(false);
+  const [expenses, setExpenses] = useState({
+    date: "",
+    expense: "",
+    amount: 0,
+  });
   return (
     <div className="h-screen">
       <div className="bg-gradient-to-r from-blue-300 to-indigo-700 h-20 flex justify-center items-center mb-6">
@@ -53,10 +59,17 @@ function UserDashboard() {
           <h2>Add Expenses</h2>
         </button>
         {openExpensesModal && (
-          <ExpensesModal closeExpensesModal={setOpenExpensesModal} />
+          <ExpensesModal
+            closeExpensesModal={setOpenExpensesModal}
+            expenses={expenses}
+            setExpenses={setExpenses}
+          />
         )}
       </div>
       <div>{/* <Expenses /> */}</div>
+      <div>
+        <DateExpenseList expenses={expenses} setExpenses={setExpenses} />
+      </div>
     </div>
   );
 }

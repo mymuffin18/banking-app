@@ -9,7 +9,15 @@ function ChangePasswordModal({ closeChangePasswordModal }) {
           <h1>Password</h1>
         </div>
         <div className="body flex-col">
-          <input type="text" />
+          <input type="text" placeholder="Enter new password" />
+          {/* {error === "" ? (
+            ""
+          ) : (
+            <span className="text-sm block text-red-500">{error}</span>
+          )} */}
+        </div>
+        <div className="body flex-col">
+          <input type="text" placeholder="confirm password" />
           {/* {error === "" ? (
             ""
           ) : (
