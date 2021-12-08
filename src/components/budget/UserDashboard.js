@@ -56,6 +56,12 @@ function UserDashboard() {
         {openExpensesModal && (
           <ExpensesModal closeExpensesModal={setOpenExpensesModal} />
         )}
+        <button
+          className="rounded-3xl card"
+          onClick={() => navigate("/history")}
+        >
+          <h2>Transaction History</h2>
+        </button>
       </div>
       <div>
         <DateExpenseList />
