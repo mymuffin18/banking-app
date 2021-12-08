@@ -20,6 +20,14 @@ function TransactionHistory() {
                 Amount
               </div>
             </div>
+            <div className="flex flex-row justify-center items-center">
+              <div className="lg:text-xl font-semibold border border-solid border-black w-1/3 text-center">
+                dito lalagay
+              </div>
+              <div className="lg:text-xl font-semibold border border-solid border-black w-1/3 text-center">
+                dito lalagay
+              </div>
+            </div>
           </div>
         </div>
         <div className="bg-blue-500 h-96 flex justify-center items-center flex-col">
@@ -52,9 +60,14 @@ function TransactionHistory() {
           </div>
         </div>
       </div>
-      <button className="btn-gradient" onClick={() => navigate("/user")}>
-        Back
-      </button>
+      <div className="flex justify-end">
+        <button
+          className="btn-gradient mt-92"
+          onClick={() => navigate("/user")}
+        >
+          Back
+        </button>
+      </div>
     </div>
   );
 }
