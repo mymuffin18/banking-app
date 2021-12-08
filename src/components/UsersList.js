@@ -13,19 +13,19 @@ function UserList({ clickHandler }) {
 
   return (
     <div className="flex justify-center">
-      <div className="w-4/5 mt-20 mb-20 h-80 card glass overflow-scroll overflow-x-hidden">
+      <div className="w-4/5 xs:mt-5 lg:mt-20 lg:mb-20 lg:h-80 card glass overflow-scroll overflow-x-hidden">
         <h1 className="text-center">Users list</h1>
         <div className="flex flex-row justify-center">
-          <div className="text-base font-semibold border border-solid border-black w-1/3 text-center">
+          <div className="lg:text-xl font-semibold border border-solid border-black w-1/3 text-center">
             Account id
           </div>
-          <div className="text-base font-semibold border border-solid border-black w-1/6 text-center">
+          <div className="lg:text-xl font-semibold border border-solid border-black w-1/6 text-center">
             First name
           </div>
-          <div className="text-base font-semibold border border-solid border-black w-1/6 text-center">
+          <div className="lg:text-xl font-semibold border border-solid border-black w-1/6 text-center">
             Last name
           </div>
-          <div className="text-base font-semibold border border-solid border-black w-1/6 text-center">
+          <div className="lg:text-xl font-semibold border border-solid border-black w-1/6 text-center">
             Balance
           </div>
         </div>

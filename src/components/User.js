@@ -13,10 +13,10 @@ function User(props) {
         } flex flex-row justify-center border w-5/6`}
         onClick={fun}
       >
-        <div className="font-semibold w-2/5">{props.id}</div>
-        <div className="font-semibold w-1/5">{props.firstname}</div>
-        <div className="font-semibold w-1/5">{props.lastname}</div>
-        <div className="font-semibold w-1/5">{props.balance}</div>
+        <div className="font-semibold lg:text-xl w-2/5">{props.id}</div>
+        <div className="font-semibold lg:text-xl w-1/5">{props.firstname}</div>
+        <div className="font-semibold lg:text-xl w-1/5">{props.lastname}</div>
+        <div className="font-semibold lg:text-xl w-1/5">{props.balance}</div>
       </div>
     </div>
   );

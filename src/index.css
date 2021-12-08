@@ -55,7 +55,8 @@ body {
 
 .modalContainer {
   width: 500px;
-  height: 200px;
+  /* height: 200px; */
+  height: fit-content;
   border-radius: 12px;
   /* background-color:white; */
   box-shadow: rgba(177, 123, 123, 0.35) 0px 5px 15px;
@@ -120,11 +121,14 @@ body {
 
 @layer base {
   h1 {
-    @apply text-3xl text-center mb-6 font-extrabold text-purple-600;
+    @apply md:text-3xl lg:text-3xl text-center mb-6 font-extrabold text-purple-600;
   }
   h2 {
-    @apply text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-purple-700;
+    @apply md:text-2xl lg:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-purple-700;
   }
+}
+p {
+  @apply xs:text-xs md:text-xl lg:text-base font-semibold;
 }
 
 @layer components {

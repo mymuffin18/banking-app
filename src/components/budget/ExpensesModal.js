@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import ReactDOM from "react-dom";
-
-function ExpensesModal({ closeExpensesModal, expenses, setExpenses }) {
+import { useAuth } from "../context/AuthContextProvider";
+import { ExpenseContext } from "../context/ExpenseContextProvider";
+import { UserContext } from "../context/UserContextProvider";
+function ExpensesModal({ closeExpensesModal }) {
+  const [expenses, setExpenses] = useState({
+    date: "",
+    expense: "",
+    amount: 0,
+  });
+  const { dispatch } = useContext(ExpenseContext);
+  const { dispatch: altDispatch } = useContext(UserContext);
+  const { state } = useAuth();
   const onSubmit = (event) => {
     event.preventDefault();
-    setExpenses({ ...expenses, date: "", expense: "", amount: 0 });
+    dispatch({
+      type: "ADD_EXPENSE",
+      id: state.id,
+      expense: {
+        text: expenses.expense,
+        date: expenses.date,
+        amount: expenses.amount,
+      },
+    });
+
+    altDispatch({ type: "WITHDRAW", id: state.id, amount: expenses.amount });
     closeExpensesModal(false);
   };
   return ReactDOM.createPortal(
@@ -21,7 +41,6 @@ function ExpensesModal({ closeExpensesModal, expenses, setExpenses }) {
               setExpenses({ ...expenses, date: event.target.value })
             }
           />
-          <p>{expenses.date}</p>
         </div>
         <div className="body flex-col">
           <input
@@ -32,7 +51,6 @@ function ExpensesModal({ closeExpensesModal, expenses, setExpenses }) {
               setExpenses({ ...expenses, expense: event.target.value })
             }
           />
-          <p>{expenses.expense}</p>
         </div>
         <div className="body flex-col">
           <input
@@ -42,7 +60,6 @@ function ExpensesModal({ closeExpensesModal, expenses, setExpenses }) {
               setExpenses({ ...expenses, amount: event.target.value })
             }
           />
-          <p>{expenses.amount}</p>
           {/* {error === "" ? (
                 ""
               ) : (
