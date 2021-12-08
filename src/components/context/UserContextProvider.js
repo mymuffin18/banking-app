@@ -45,7 +45,19 @@ const userReducer = (state, action) => {
 					  }
 					: user;
 			});
-
+		case 'CHANGE_PASSWORD':
+			return state.map((user) => {
+				return user.id === action.id
+					? {
+							id: user.id,
+							firstName: user.firstName,
+							lastName: user.lastName,
+							balance: user.balance,
+							username: user.username,
+							password: action.newPassword,
+					  }
+					: user;
+			});
 		case 'TRANSFER':
 			return state.map((user) => {
 				if (user.id === action.senderId) {
