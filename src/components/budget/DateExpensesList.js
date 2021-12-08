@@ -17,7 +17,6 @@ function DateExpensesList({ expenses, setExpenses }) {
           </div>
         </div>
         <div>
-          alalala
           {/* {expenses.map(({ expenses }) => (
             <li>
               <input
