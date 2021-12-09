@@ -35,7 +35,7 @@ function Dashboard() {
 
 	return (
 		<div className='h-screen'>
-			<div className='bg-gradient-to-r z-10 from-blue-300 to-indigo-700 h-auto p-1 flex justify-center items-center mb-6'>
+			<div className='bg-gradient-to-r from-blue-300 to-indigo-700 h-auto p-1 flex justify-center items-center mb-6 z-10 dark:bg-gradient-pink'>
 				<h1 className='text-white'>Dashboard</h1>
 			</div>
 			<div className='grid lg:grid-cols-5 gap-4'>
@@ -46,7 +46,9 @@ function Dashboard() {
 					className='rounded-3xl modalCard modalContainer'
 					onClick={() => navigate('/create')}
 				>
-					<h2 className='text-center'>Create Account</h2>
+					<h2 className='text-center dark:text-pink-600'>
+						Create Account
+					</h2>
 				</button>
 				<button
 					className='rounded-3xl modalCard modalContainer'
@@ -55,7 +57,9 @@ function Dashboard() {
 					}}
 					disabled={id === undefined ? true : false}
 				>
-					<h2 className='text-center'>Deposit</h2>
+					<h2 className='text-center dark:text-pink-600'>
+						Deposit
+					</h2>
 				</button>
 				{openDepositModal && (
 					<DepositModal
@@ -71,7 +75,9 @@ function Dashboard() {
 					disabled={id === undefined ? true : false}
 					className='rounded-3xl modalCard modalContainer'
 				>
-					<h2 className='text-center'>Withdraw</h2>
+					<h2 className='text-center dark:text-pink-600'>
+						Withdraw
+					</h2>
 				</button>
 				{openWithdrawModal && (
 					<WithdrawModal
@@ -87,7 +93,9 @@ function Dashboard() {
 					disabled={id === undefined ? true : false}
 					className='rounded-3xl modalCard modalContainer'
 				>
-					<h2 className='text-center'>Transfer</h2>
+					<h2 className='text-center dark:text-pink-600'>
+						Transfer
+					</h2>
 				</button>
 				{openTransferModal && (
 					<TransferModal
@@ -100,7 +108,9 @@ function Dashboard() {
 					className='rounded-3xl modalCard modalContainer'
 					onClick={handleLogout}
 				>
-					<h2 className='text-center'>Logout</h2>
+					<h2 className='text-center dark:text-pink-600'>
+						Logout
+					</h2>
 				</button>
 			</div>
 

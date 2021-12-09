@@ -1,4 +1,5 @@
 module.exports = {
+	mode: 'jit',
 	purge: [],
 	purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
 	darkMode: 'class', // or 'media' or 'class'
@@ -7,6 +8,9 @@ module.exports = {
 			backgroundImage: (theme) => ({
 				light: "url('https://image.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg')",
 				dark: "url('https://image.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg')",
+				info: 'linear-gradient(to right, hsla(240, 100%, 50%, 0.2), transparent 50%)',
+				'gradient-pink':
+					'linear-gradient(90deg, rgba(233,157,202,1) 0%, rgba(255,39,105,1) 100%)',
 			}),
 			screens: {
 				xs: '320px',

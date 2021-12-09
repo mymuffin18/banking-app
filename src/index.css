@@ -27,174 +27,178 @@
 /* } */
 
 .card {
-  /* backdrop-filter: blur(5px); */
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+	/* backdrop-filter: blur(5px); */
+	background: rgba(255, 255, 255, 0.15);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .modalCard {
-  backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
 }
 
 .modalBackGround {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(200, 200, 200, 0.5);
-  /* background-image: url('https://image.shutterstock.com/image-vector/widescreen-abstract-financial-graph-uptrend-600w-1263779983.jpg'); */
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(200, 200, 200, 0.5);
+	/* background-image: url('https://image.shutterstock.com/image-vector/widescreen-abstract-financial-graph-uptrend-600w-1263779983.jpg'); */
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .modalContainer {
-  /* width: 500px; */
-  /* height: 200px; */
-  /* height: fit-content; */
-  border-radius: 12px;
-  /* background-color:white; */
-  box-shadow: rgba(177, 123, 123, 0.35) 0px 5px 15px;
-  /* display: flex;
+	/* width: 500px; */
+	/* height: 200px; */
+	/* height: fit-content; */
+	border-radius: 12px;
+	/* background-color:white; */
+	box-shadow: rgba(177, 123, 123, 0.35) 0px 5px 15px;
+	/* display: flex;
   flex-direction: column; */
-  /* padding: 25px; */
+	/* padding: 25px; */
 }
 
 .body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
 }
 
 .footer {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
 }
 
 .list-items {
-  display: flex;
-  margin: 20px 0;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 10px;
-  max-height: 50px;
+	display: flex;
+	margin: 20px 0;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 10px;
+	max-height: 50px;
 }
 
 .button-complete,
 .button-edit,
 .button-delete {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: transparent;
-  font-size: 28px;
-  border-radius: 50%;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: transparent;
+	font-size: 28px;
+	border-radius: 50%;
 }
 
 .button-complete {
-  color: #ff6c6c;
-  margin-right: 10px;
+	color: #ff6c6c;
+	margin-right: 10px;
 }
 
 .button-edit {
-  color: #e2d029;
-  margin-right: 10px;
+	color: #e2d029;
+	margin-right: 10px;
 }
 
 .button-delete {
-  color: lightseagreen;
+	color: lightseagreen;
 }
 
 .complete {
-  text-decoration-style: solid;
-  text-decoration-line: line-through;
-  text-decoration-color: #ff6c6c;
-  opacity: 0.6;
+	text-decoration-style: solid;
+	text-decoration-line: line-through;
+	text-decoration-color: #ff6c6c;
+	opacity: 0.6;
 }
 
 @layer base {
-  h1 {
-    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-center mb-3 mt-3 font-extrabold text-purple-600;
-  }
-  h2 {
-    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-purple-700;
-  }
+	h1 {
+		@apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-center mb-3 mt-3 font-extrabold text-purple-600;
+	}
+	h2 {
+		@apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-purple-700;
+	}
 }
 p {
-  @apply text-xs sm:text-sm md:text-xl lg:text-xl xl:text-xl 2xl:text-xl text-indigo-600;
+	@apply text-xs sm:text-sm md:text-xl lg:text-xl xl:text-xl 2xl:text-xl text-indigo-600;
 }
 
 @layer components {
-  .btn-blue {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-5;
-  }
+	.btn-blue {
+		@apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-5;
+	}
 
-  .btn-gradient {
-    @apply bg-gradient-to-r from-blue-400 to-purple-600  hover:bg-purple-500 text-white font-bold py-2 px-4 rounded mx-5;
-  }
+	.btn-gradient {
+		@apply bg-gradient-to-r from-blue-400 to-purple-600  hover:bg-purple-500 text-white font-bold py-2 px-4 rounded mx-5;
+	}
 
-  .glass {
-    @apply bg-gradient-to-br from-gray-400 to-transparent  bg-opacity-20 shadow-md;
-  }
+	.btn-gradient-dark {
+		@apply bg-gradient-to-r from-red-400 to-pink-600 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded mx-5;
+	}
 
-  .input-style {
-    @apply shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 leading-tight;
-  }
+	.glass {
+		@apply bg-gradient-to-br from-gray-400 to-transparent  bg-opacity-20 shadow-md;
+	}
+
+	.input-style {
+		@apply shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 leading-tight;
+	}
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+	width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: gray;
-  border-radius: 10px;
+	background: gray;
+	border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: white;
+	background: white;
 }
 
 .pink-circle {
-  animation: circularPath 5s ease-in infinite;
+	animation: circularPath 5s ease-in infinite;
 }
 .purple-circle {
-  animation: revCircularPath 5s ease-in infinite;
+	animation: revCircularPath 5s ease-in infinite;
 }
 
 .purple-circle {
-  animation: revCircularPath 5s linear infinite;
+	animation: revCircularPath 5s linear infinite;
 }
 @keyframes revCircularPath {
-  from {
-    transform: rotate(0deg) translateX(-150px) rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg) translateX(-150px) rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg) translateX(-150px) rotate(0deg);
+	}
+	to {
+		transform: rotate(-360deg) translateX(-150px) rotate(360deg);
+	}
 }
 
 @keyframes circularPath {
-  from {
-    transform: rotate(0deg) translateX(150px) rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg) translateX(150px) rotate(-360deg);
-  }
+	from {
+		transform: rotate(0deg) translateX(150px) rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg) translateX(150px) rotate(-360deg);
+	}
 }
