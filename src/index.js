@@ -4,9 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AuthContextProvider } from './components/context/AuthContextProvider';
+import Circles from './components/Circles';
 ReactDOM.render(
 	<AuthContextProvider>
-		<App />
+		<Circles>
+			<App />
+		</Circles>
 	</AuthContextProvider>,
 	document.getElementById('root')
 );
