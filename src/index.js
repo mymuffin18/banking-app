@@ -5,11 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AuthContextProvider } from './components/context/AuthContextProvider';
 import Circles from './components/Circles';
+import ThemeContextProvider from './components/context/ThemeContextProvider';
 ReactDOM.render(
 	<AuthContextProvider>
-		<Circles>
-			<App />
-		</Circles>
+		<ThemeContextProvider>
+			<Circles>
+				<div className='h-screen bg-cover bg-light dark:bg-dark transition-all'>
+					<App />
+				</div>
+			</Circles>
+		</ThemeContextProvider>
 	</AuthContextProvider>,
 	document.getElementById('root')
 );

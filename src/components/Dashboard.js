@@ -35,7 +35,7 @@ function Dashboard() {
 
 	return (
 		<div className='h-screen'>
-			<div className='bg-gradient-to-r z-10 from-blue-300 to-indigo-700 h-auto p-1 flex justify-center items-center mb-6 mt-6'>
+			<div className='bg-gradient-to-r z-10 from-blue-300 to-indigo-700 h-auto p-1 flex justify-center items-center mb-6'>
 				<h1 className='text-white'>Dashboard</h1>
 			</div>
 			<div className='grid lg:grid-cols-5 gap-4'>

@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
 	background-image: url('https://image.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg');
 	background-size: cover;
 	/* background-image: linear-gradient(
@@ -21,10 +21,10 @@ body {
     #4c1eb7,
     #4619ae
   ); */
-	margin: 20px;
-	/* font-family:'Anton', sans-serif; */
-	/* overflow: hidden; */
-}
+/* margin: 20px; */
+/* font-family:'Anton', sans-serif; */
+/* overflow: hidden; */
+/* } */
 
 .card {
 	/* backdrop-filter: blur(5px); */
@@ -175,12 +175,15 @@ p {
 	animation: circularPath 5s linear infinite;
 }
 
+.purple-circle {
+	animation: revCircularPath 5s linear infinite;
+}
 @keyframes revCircularPath {
 	from {
 		transform: rotate(0deg) translateX(-150px) rotate(0deg);
 	}
 	to {
-		transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+		transform: rotate(-360deg) translateX(-150px) rotate(360deg);
 	}
 }
 
