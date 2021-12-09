@@ -9,7 +9,7 @@ function User(props) {
     <div className="flex justify-center items-center">
       <div
         className={`${
-          props.selected === props.id ? "bg-blue-500" : ""
+          props.selected === props.id ? "bg-blue-300" : ""
         } flex flex-row justify-center border w-5/6`}
         onClick={fun}
       >

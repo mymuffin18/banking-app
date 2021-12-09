@@ -21,7 +21,7 @@ function TransactionHistory() {
         </button>
       </div>
       <div className="grid lg:grid-cols-3 gap-4">
-        <div className="glass card h-36 md:h-56 lg:h-96 xl:h-96 2xl:h-96 flex justify-center items-center flex-col">
+        <div className="modalCard modalContainer h-36 md:h-56 lg:h-96 xl:h-96 2xl:h-96 flex justify-center items-center flex-col">
           <div>
             <h2>Deposit</h2>
           </div>
@@ -48,7 +48,7 @@ function TransactionHistory() {
               ))}
           </div>
         </div>
-        <div className="glass card h-36 md:h-56 lg:h-96 xl:h-96 2xl:h-96 flex justify-center items-center flex-col">
+        <div className="modalCard modalContainer h-36 md:h-56 lg:h-96 xl:h-96 2xl:h-96 flex justify-center items-center flex-col">
           <div>
             <h2>Withdraw</h2>
           </div>
@@ -75,7 +75,7 @@ function TransactionHistory() {
               ))}
           </div>
         </div>
-        <div className="glass card h-36 md:h-56 lg:h-96 xl:h-96 2xl:h-96 flex justify-center items-center flex-col">
+        <div className="modalCard modalContainer h-36 md:h-56 lg:h-96 xl:h-96 2xl:h-96 flex justify-center items-center flex-col">
           <div>
             <h2>Transfer</h2>
           </div>

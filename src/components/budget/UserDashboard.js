@@ -23,16 +23,19 @@ function UserDashboard() {
         <h1 className="text-white">Budget Cashy++</h1>
       </div>
       <div className="grid lg:grid-cols-5 gap-4">
-        <div className="row-span-2 col-span-2 lg:h-60 rounded-3xl card">
+        <div className="row-span-2 col-span-2 lg:h-60 rounded-3xl modalCard modalContainer">
           <InfoContainer id={state.id} />
         </div>
 
-        <button className="rounded-3xl card" onClick={handleLogout}>
+        <button
+          className="rounded-3xl modalCard modalContainer"
+          onClick={handleLogout}
+        >
           <h2>Logout</h2>
         </button>
 
         <button
-          className="rounded-3xl card"
+          className="rounded-3xl modalCard modalContainer"
           onClick={() => {
             setOpenChangePasswordModal(true);
           }}
@@ -46,7 +49,7 @@ function UserDashboard() {
         )}
 
         <button
-          className="rounded-3xl card"
+          className="rounded-3xl modalCard modalContainer"
           onClick={() => {
             setOpenExpensesModal(true);
           }}
@@ -57,7 +60,7 @@ function UserDashboard() {
           <ExpensesModal closeExpensesModal={setOpenExpensesModal} />
         )}
         <button
-          className="rounded-3xl card"
+          className="rounded-3xl modalCard modalContainer"
           onClick={() => navigate("/history")}
         >
           <h2>Transaction History</h2>

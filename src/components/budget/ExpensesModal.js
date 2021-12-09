@@ -29,7 +29,7 @@ function ExpensesModal({ closeExpensesModal }) {
   };
   return ReactDOM.createPortal(
     <div className="modalBackGround">
-      <div className="modalContainer glass modalCard">
+      <div className="modalContainer glass modalCard px-20 py-10">
         <div className="title">
           <h1>Add Expenses</h1>
         </div>
