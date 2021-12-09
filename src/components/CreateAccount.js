@@ -66,12 +66,12 @@ function CreateAccount() {
   };
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="lg:w-1/5 h-auto p-5 glass card xs:modalContainer md:modalContainer rounded-3xl">
+      <div className="lg:w-auto lg:h-auto p-5 rounded-xl card w-auto xl:w-auto">
         <form
           className="flex justify-center items-center flex-col"
           onSubmit={handleSubmit}
         >
-          <h1>Bank Name Create Account</h1>
+          <h1 className="text-5xl">Cashy++</h1>
           <div className="mb-3">
             <input
               type="text"

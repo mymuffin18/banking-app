@@ -20,7 +20,7 @@ function UserDashboard() {
   return (
     <div className="h-screen">
       <div className="bg-gradient-to-r from-blue-300 to-indigo-700 h-20 flex justify-center items-center mb-6">
-        <h1 className="text-white text-3xl">Budget Cashy++</h1>
+        <h1 className="text-white">Budget Cashy++</h1>
       </div>
       <div className="grid lg:grid-cols-5 gap-4">
         <div className="row-span-2 col-span-2 lg:h-60 rounded-3xl card">

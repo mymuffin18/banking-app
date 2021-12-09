@@ -13,20 +13,20 @@ function UserList({ clickHandler }) {
 
   return (
     <div className="flex justify-center">
-      <div className="w-4/5 xs:mt-5 lg:mt-20 lg:mb-20 lg:h-80 card glass overflow-scroll overflow-x-hidden">
+      <div className="w-4/5 mt-5 md:mt-10 lg:mt-20 xl:mt-20 2xl:mt-20 lg:mb-20 max-h-48 md:max-h-96 lg:max-h-96 card glass overflow-scroll overflow-x-hidden">
         <h1 className="text-center">Users list</h1>
         <div className="flex flex-row justify-center">
-          <div className="lg:text-xl font-semibold border border-solid border-black w-1/3 text-center">
-            Account id
+          <div className="border border-solid border-indigo-700 w-1/3">
+            <p className="font-semibold text-center">Account id</p>
           </div>
-          <div className="lg:text-xl font-semibold border border-solid border-black w-1/6 text-center">
-            First name
+          <div className="border border-solid border-indigo-700 w-1/6">
+            <p className="font-semibold text-center">Name</p>
           </div>
-          <div className="lg:text-xl font-semibold border border-solid border-black w-1/6 text-center">
-            Last name
+          <div className="border border-solid border-indigo-700 w-1/6">
+            <p className="font-semibold text-center">Last name</p>
           </div>
-          <div className="lg:text-xl font-semibold border border-solid border-black w-1/6 text-center">
-            Balance
+          <div className="border border-solid border-indigo-700 w-1/6">
+            <p className="font-semibold text-center">Balance</p>
           </div>
         </div>
         {users.map((user) => {

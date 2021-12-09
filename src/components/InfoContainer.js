@@ -8,7 +8,7 @@ function InfoContainer({ id }) {
     <div>
       {user && (
         <div className="flex flex-col gap-1 p-5">
-          <div className="mt-2">
+          <div className="mt-1">
             <p className="md:text-xl lg:text-2xl">
               Account id:{" "}
               <span className="font-bold text-indigo-600">{user.id}</span>
