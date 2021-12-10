@@ -18,8 +18,12 @@ function TransferModal({ closeTransferModal, id }) {
 		if (user.balance < amount) {
 			setError('Not enough balance');
 			setAmount(0);
-		} else if (receiverId === '' || receiver === undefined) {
-			setError('di pwede');
+		} else if (
+			receiverId === '' ||
+			receiver === undefined ||
+			receiverId === id
+		) {
+			setError('Invalid Account number.');
 		} else if (amount < 0) {
 			setError('invalid amount');
 		} else {
