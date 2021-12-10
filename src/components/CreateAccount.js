@@ -28,6 +28,7 @@ function CreateAccount() {
 		setPasswordError('');
 
 		let reg = /\d+/;
+		let regNum = /^\d+$/;
 		let dupe = users.find((i) => i.username === user.username);
 		console.log(dupe);
 		if (reg.test(user.firstName) || reg.test(user.lastName)) {
@@ -47,6 +48,8 @@ function CreateAccount() {
 			setUsernameError('Username already taken.');
 		} else if (user.password !== confirmPassword) {
 			setPasswordError('Password not match');
+		} else if (!regNum.test(user.balance) || user.balance < 0) {
+			alert('Invalid Amount');
 		} else {
 			const balance = parseInt(user.balance);
 			dispatch({
