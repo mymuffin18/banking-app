@@ -183,7 +183,7 @@ p {
 }
 
 .purple-circle {
-	animation: revCircularPath 5s linear infinite;
+	animation: revCircularPath 5s ease-in-out infinite;
 }
 @keyframes revCircularPath {
 	from {
