@@ -6,6 +6,10 @@ import ChangePasswordModal from './ChangePasswordModal';
 import ExpensesModal from './ExpensesModal';
 import DateExpenseList from './DateExpensesList';
 import InfoContainer from '../InfoContainer';
+import DepositModal from '../DepositModal';
+import WithdrawModal from '../WithdrawModal';
+import TransferModal from '../TransferModal';
+
 function UserDashboard() {
 	const { state, dispatch } = useAuth();
 	const navigate = useNavigate();
@@ -13,10 +17,12 @@ function UserDashboard() {
 		dispatch('LOGOUT');
 		navigate('/');
 	};
-
+	const [openDepositModal, setOpenDepositModal] = useState(false);
 	const [openChangePasswordModal, setOpenChangePasswordModal] =
 		useState(false);
 	const [openExpensesModal, setOpenExpensesModal] = useState(false);
+	const [openWithdrawModal, setOpenWithdrawModal] = useState(false);
+	const [openTransferModal, setOpenTransferModal] = useState(false);
 
 	return (
 		<div className='h-screen'>
@@ -72,6 +78,57 @@ function UserDashboard() {
 						Transaction History
 					</h2>
 				</button>
+
+				<button
+					className='rounded-3xl modalCard modalContainer'
+					onClick={() => {
+						setOpenDepositModal(true);
+					}}
+				>
+					<h2 className='text-center dark:text-pink-600'>
+						Deposit
+					</h2>
+				</button>
+				{openDepositModal && (
+					<DepositModal
+						closeDepositModal={setOpenDepositModal}
+						id={state.id}
+					/>
+				)}
+
+				<button
+					onClick={() => {
+						setOpenWithdrawModal(true);
+					}}
+					className='rounded-3xl modalCard modalContainer'
+				>
+					<h2 className='text-center dark:text-pink-600'>
+						Withdraw
+					</h2>
+				</button>
+				{openWithdrawModal && (
+					<WithdrawModal
+						closeWithdrawModal={setOpenWithdrawModal}
+						id={state.id}
+					/>
+				)}
+
+				<button
+					onClick={() => {
+						setOpenTransferModal(true);
+					}}
+					className='rounded-3xl modalCard modalContainer'
+				>
+					<h2 className='text-center dark:text-pink-600'>
+						Transfer
+					</h2>
+				</button>
+				{openTransferModal && (
+					<TransferModal
+						closeTransferModal={setOpenTransferModal}
+						id={state.id}
+					/>
+				)}
 			</div>
 			<div>
 				<DateExpenseList />
