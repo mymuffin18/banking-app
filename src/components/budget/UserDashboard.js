@@ -110,7 +110,7 @@ function UserDashboard() {
       </div>
       <div className="flex justify-end">
         <button
-          className="rounded-3xl modalCard modalContainer py-20 px-20"
+          className="rounded-3xl modalCard modalContainer py-10 px-20"
           onClick={() => navigate("/history")}
         >
           <h2 className="dark:text-pink-600">Transaction History</h2>
