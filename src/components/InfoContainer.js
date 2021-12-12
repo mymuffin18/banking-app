@@ -41,7 +41,7 @@ function InfoContainer({ id, deletable }) {
             {deletable && (
               <div className="">
                 <button
-                  className="py-2 px-4 btn-gradient text-white"
+                  className="py-2 px-4 btn-gradient dark:bg-gradient-pink text-white"
                   onClick={(e) => handleClick(e)}
                 >
                   Delete
