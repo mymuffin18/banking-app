@@ -67,7 +67,7 @@ function ChangePasswordModal({ closeChangePasswordModal }) {
 					<input
 						type='text'
 						placeholder='Last name'
-						value={password}
+						value={lastname}
 						onChange={(e) => setLastname(e.target.value)}
 					/>
 				</div>
