@@ -40,7 +40,7 @@ function Dashboard() {
 			</div>
 			<div className='grid lg:grid-cols-5 gap-4'>
 				<div className='row-span-2 col-span-2 lg:h-60 rounded-3xl modalCard modalContainer'>
-					<InfoContainer id={id} />
+					<InfoContainer id={id} deletable={true} />
 				</div>
 				<button
 					className='rounded-3xl modalCard modalContainer'

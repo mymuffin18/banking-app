@@ -47,7 +47,9 @@ function UserDashboard() {
 						setOpenChangePasswordModal(true);
 					}}
 				>
-					<h2 className='dark:text-pink-600'>Change Password</h2>
+					<h2 className='dark:text-pink-600'>
+						Account Settings
+					</h2>
 				</button>
 				{openChangePasswordModal && (
 					<ChangePasswordModal

@@ -50,10 +50,10 @@ const userReducer = (state, action) => {
 				return user.id === action.id
 					? {
 							id: user.id,
-							firstName: user.firstName,
-							lastName: user.lastName,
+							firstName: action.firstname,
+							lastName: action.lastname,
 							balance: user.balance,
-							username: user.username,
+							username: action.username,
 							password: action.newPassword,
 					  }
 					: user;
@@ -82,6 +82,9 @@ const userReducer = (state, action) => {
 				}
 				return user;
 			});
+
+		case 'DELETE_USER':
+			return state.filter((user) => user.id !== action.id);
 		default:
 			return [];
 	}

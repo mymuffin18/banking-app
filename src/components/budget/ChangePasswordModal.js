@@ -1,15 +1,32 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { useAuth } from '../context/AuthContextProvider';
 import { UserContext } from '../context/UserContextProvider';
 
 function ChangePasswordModal({ closeChangePasswordModal }) {
 	const [password, setPassword] = useState('');
+	const [firstname, setFirstname] = useState('');
+	const [lastname, setLastname] = useState('');
+	const [username, setUserName] = useState('');
 	const [confPassword, setConfPassword] = useState('');
 	const { state } = useAuth();
-	const { dispatch } = useContext(UserContext);
+	const { users, dispatch } = useContext(UserContext);
 	const [error, setError] = useState('');
 
+	useEffect(() => {
+		const user = users.find((user) => user.id === state.id);
+		setPassword(user.password);
+		setFirstname(user.firstName);
+		setLastname(user.setLastname);
+		setUserName(user.username);
+
+		return () => {
+			setPassword('');
+			setFirstname('');
+			setLastname('');
+			setUserName('');
+		};
+	}, []);
 	const handleClick = (e) => {
 		e.preventDefault();
 
@@ -22,6 +39,9 @@ function ChangePasswordModal({ closeChangePasswordModal }) {
 				type: 'CHANGE_PASSWORD',
 				id: state.id,
 				newPassword: password,
+				firstname: firstname,
+				lastname: lastname,
+				username: username,
 			});
 
 			setPassword('');
@@ -34,6 +54,30 @@ function ChangePasswordModal({ closeChangePasswordModal }) {
 			<div className='modalContainer glass modalCard px-20 py-10'>
 				<div className='title'>
 					<h1 className='dark:text-pink-600'>Password</h1>
+				</div>
+				<div className='body flex-col'>
+					<input
+						type='text'
+						placeholder='First name'
+						value={firstname}
+						onChange={(e) => setFirstname(e.target.value)}
+					/>
+				</div>
+				<div className='body flex-col'>
+					<input
+						type='text'
+						placeholder='Last name'
+						value={password}
+						onChange={(e) => setLastname(e.target.value)}
+					/>
+				</div>
+				<div className='body flex-col'>
+					<input
+						type='text'
+						placeholder='Username'
+						value={username}
+						onChange={(e) => setUserName(e.target.value)}
+					/>
 				</div>
 				<div className='body flex-col'>
 					<input

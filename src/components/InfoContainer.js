@@ -1,9 +1,14 @@
 import React, { useContext } from 'react';
 import { UserContext } from './context/UserContextProvider';
 
-function InfoContainer({ id }) {
-	const { users } = useContext(UserContext);
+function InfoContainer({ id, deletable }) {
+	const { users, dispatch } = useContext(UserContext);
 	const user = users.find((user) => user.id === id);
+
+	const handleClick = (e) => {
+		e.preventDefault();
+		dispatch({ type: 'DELETE_USER', id: user.id });
+	};
 	return (
 		<div>
 			{user && (
@@ -31,6 +36,18 @@ function InfoContainer({ id }) {
 								{user.balance}
 							</span>
 						</p>
+					</div>
+					<div className='flex justify-end'>
+						{deletable && (
+							<div className=''>
+								<button
+									className='py-2 px-4 bg-red-500 text-white'
+									onClick={(e) => handleClick(e)}
+								>
+									Delete
+								</button>
+							</div>
+						)}
 					</div>
 				</div>
 			)}
